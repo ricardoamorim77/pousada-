@@ -1,0 +1,117 @@
+    <!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reserva - Pousada Paraíso</title>
+    <meta name="description" content="Faça sua reserva na Pousada Paraíso. Escolha sua acomodação ou Day Use e envie sua solicitação via WhatsApp.">
+    <meta name="keywords" content="reserva, pousada, hotel, day use, hospedagem, contato, whatsapp">
+    <link rel="stylesheet" href="style-template.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+
+    <!-- WHATSAPP FLUTUANTE -->
+    <a href="https://wa.me/5577000000000" target="_blank" class="whatsapp-float">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- MENU DE NAVEGAÇÃO -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">Pousada Paraíso</a>
+            <ul class="nav-menu">
+                <li><a href="index.html#inicio" class="nav-link">Início</a></li>
+                <li><a href="index.html#sobre" class="nav-link">A Pousada</a></li>
+                <li><a href="index.html#acomodacoes" class="nav-link">Acomodações</a></li>
+                <li><a href="index.html#lazer" class="nav-link">Lazer</a></li>
+                <li><a href="index.html#galeria" class="nav-link">Galeria</a></li>
+                <li><a href="index.html#contato" class="nav-link">Contato</a></li>
+            </ul>
+            <a href="reserva.html" class="nav-button active">Reservar</a>
+        </div>
+    </nav>
+
+    <!-- CABEÇALHO DA PÁGINA -->
+    <header class="page-header">
+        <div class="page-header-overlay"></div>
+        <h1>Sua Reserva Começa Aqui</h1>
+        <p>Preencha os detalhes e garanta sua experiência no Paraíso.</p>
+    </header>
+
+    <!-- CONTEÚDO PRINCIPAL - O FORMULÁRIO -->
+    <main>
+        <section class="booking-section">
+            <form id="booking-form" class="booking-form">
+                
+                <div class="form-group">
+                    <label for="name">Seu Nome Completo:</label>
+                    <input type="text" id="name" name="name" placeholder="Digite seu nome" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="booking_type">Qual experiência você deseja?</label>
+                    <select id="booking_type" name="booking_type">
+                        <option value="hospedagem">Hospedagem (Pernoite)</option>
+                        <option value="day_use">Day Use (Passar o dia)</option>
+                    </select>
+                </div>
+
+                <!-- CAMPOS QUE APARECEM SÓ PARA HOSPEDAGEM -->
+                <div id="hospedagem-fields">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="checkin">Data de Check-in:</label>
+                            <input type="date" id="checkin" name="checkin">
+                        </div>
+                        <div class="form-group">
+                            <label for="checkout">Data de Check-out:</label>
+                            <input type="date" id="checkout" name="checkout">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="room_type">Tipo de Acomodação:</label>
+                        <select id="room_type" name="room_type">
+                            <option value="Suíte Luxo (Duplo)">Suíte Luxo (Duplo) - R$ 430,00</option>
+                            <option value="Chalé Família">Chalé Família - R$ 550,00</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="guests">Número de Hóspedes (Adultos):</label>
+                        <input type="number" id="guests" name="guests" min="1" value="1">
+                    </div>
+                </div>
+
+                <!-- CAMPOS QUE APARECEM SÓ PARA DAY USE -->
+                <div id="dayuse-fields" style="display: none;">
+                    <div class="form-group">
+                        <label for="dayuse_date">Data da Visita:</label>
+                        <input type="date" id="dayuse_date" name="dayuse_date">
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="adults">Nº de Adultos:</label>
+                            <input type="number" id="adults" name="adults" min="1" value="1">
+                        </div>
+                        <div class="form-group">
+                            <label for="children">Nº de Crianças (6-12 anos):</label>
+                            <input type="number" id="children" name="children" min="0" value="0">
+                        </div>
+                    </div>
+                </div>
+                
+                <button type="submit" class="cta-button submit-button">
+                    <i class="fab fa-whatsapp"></i> Enviar Solicitação de Reserva
+                </button>
+            </form>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2025 Pousada Paraíso. Todos os direitos reservados.</p>
+        <p class="dev-signature">Desenvolvido por Ricardo Amorim</p>
+    </footer>
+
+    <script src="script-template.js"></script>
+</body>
+</html>

@@ -1,0 +1,638 @@
+/* Importando fontes elegantes e modernas */
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400;700&display=swap");
+
+/* Variáveis de Cor para fácil manutenção e personalização */
+:root {
+    --primary-color: #4A6C62; /* Verde musgo escuro, elegante */
+    --secondary-color: #C79A5E; /* Dourado/Bronze para acentos */
+    --accent-color: #70A08D; /* Verde mais claro para detalhes */
+    --text-color: #333333;
+    --light-text-color: #f8f8f8;
+    --background-light: #FDFBF8; /* Bege muito claro, aconchegante */
+    --background-dark: #2C3E50; /* Azul marinho escuro para rodapé */
+}
+
+/* Reset Básico e Estilos Globais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Roboto", sans-serif;
+    background-color: var(--background-light);
+    color: var(--text-color);
+    line-height: 1.7;
+    font-weight: 300;
+}
+
+h1, h2, h3, h4 {
+    font-family: "Playfair Display", serif;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+/* --- WHATSAPP FLUTUANTE --- */
+.whatsapp-float {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    background-color: #25D366; /* Verde do WhatsApp */
+    color: #fff;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.2em;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    z-index: 1000;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.1);
+    background-color: #1DA851;
+}
+
+/* --- BARRA DE NAVEGAÇÃO --- */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+    background-color: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    transition: background-color 0.3s ease;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+}
+
+.nav-logo {
+    font-family: "Playfair Display", serif;
+    font-size: 1.8em;
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+}
+
+.nav-menu li {
+    margin-left: 30px;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 400;
+    position: relative;
+    padding: 5px 0;
+    transition: color 0.3s ease;
+}
+
+.nav-link::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--secondary-color);
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: var(--primary-color);
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+    width: 100%;
+}
+
+.nav-button {
+    text-decoration: none;
+    background-color: var(--secondary-color);
+    color: var(--light-text-color);
+    padding: 10px 25px;
+    border-radius: 50px;
+    font-weight: 700;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.nav-button:hover {
+    background-color: var(--primary-color);
+    transform: translateY(-2px);
+}
+
+/* --- SEÇÃO HERO (INÍCIO) --- */
+.hero-section {
+    position: relative;
+    height: 100vh;
+    background: url("img/hero-background.jpg") no-repeat center center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--light-text-color);
+    padding-top: 80px; /* Espaço para o navbar */
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.7));
+}
+
+.hero-content {
+    position: relative;
+    z-index: 10;
+    max-width: 800px;
+    padding: 0 20px;
+}
+
+.hero-content h1 {
+    font-size: 4.5em;
+    margin-bottom: 20px;
+    color: var(--light-text-color);
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
+}
+
+.hero-content p {
+    font-size: 1.4em;
+    font-weight: 300;
+    color: var(--light-text-color);
+    text-shadow: 1px 1px 5px rgba(0,0,0,0.5);
+}
+
+.scroll-down-btn {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: var(--light-text-color);
+    font-size: 2.5em;
+    animation: bounce 2s infinite;
+    z-index: 10;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
+    40% { transform: translateX(-50%) translateY(-15px); }
+    60% { transform: translateX(-50%) translateY(-5px); }
+}
+
+/* --- ESTILOS GERAIS DE SEÇÃO --- */
+main {
+    padding-top: 0;
+}
+
+.content-section {
+    padding: 100px 25px;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.content-section.bg-light {
+    background-color: #fff;
+}
+
+.section-header {
+    margin-bottom: 60px;
+}
+
+.section-header h2 {
+    font-size: 3.5em;
+    margin-bottom: 15px;
+}
+
+.section-header p {
+    font-size: 1.2em;
+    color: #666;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.cta-button {
+    display: inline-block;
+    text-decoration: none;
+    background-color: var(--secondary-color);
+    color: var(--light-text-color);
+    padding: 15px 35px;
+    border-radius: 50px;
+    font-size: 1.1em;
+    font-weight: 700;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin-top: 30px;
+}
+
+.cta-button:hover {
+    background-color: var(--primary-color);
+    transform: translateY(-2px);
+}
+
+/* --- SEÇÃO SOBRE A POUSADA --- */
+.about-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.about-item {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    overflow: hidden;
+    text-align: left;
+    transition: transform 0.3s ease;
+}
+
+.about-item:hover {
+    transform: translateY(-5px);
+}
+
+.about-item img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+.about-item h3 {
+    font-size: 1.8em;
+    margin: 20px 20px 10px 20px;
+    color: var(--secondary-color);
+}
+
+.about-item p {
+    font-size: 1em;
+    color: #666;
+    padding: 0 20px 20px 20px;
+    text-align: left;
+}
+
+/* --- SEÇÃO ACOMODAÇÕES E DAY USE --- */
+.accommodation-options {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 40px;
+    margin-top: 40px;
+}
+
+.option-card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    overflow: hidden;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.option-card:hover {
+    transform: translateY(-10px);
+}
+
+.option-card img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+.option-card h3 {
+    font-size: 2.2em;
+    margin: 25px 0 15px 0;
+    color: var(--primary-color);
+}
+
+.option-card p {
+    font-size: 1.1em;
+    color: #555;
+    padding: 0 25px 25px 25px;
+}
+
+/* --- SEÇÃO LAZER E ATIVIDADES --- */
+.lazer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.lazer-item {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    padding: 30px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.lazer-item:hover {
+    transform: translateY(-5px);
+}
+
+.lazer-item i {
+    font-size: 3.5em;
+    color: var(--accent-color);
+    margin-bottom: 15px;
+}
+
+.lazer-item h3 {
+    font-size: 1.6em;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.lazer-item p {
+    font-size: 0.95em;
+    color: #666;
+}
+
+/* --- SEÇÃO GALERIA DE FOTOS (INLINE) --- */
+.gallery-grid-inline {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 15px;
+    margin-top: 40px;
+}
+
+.gallery-item-inline {
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    height: 250px;
+}
+
+.gallery-item-inline img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.gallery-item-inline:hover img {
+    transform: scale(1.08);
+}
+
+/* --- SEÇÃO CONTATO E LOCALIZAÇÃO --- */
+.contact-info {
+    margin-top: 40px;
+    margin-bottom: 50px;
+}
+
+.contact-info p {
+    font-size: 1.1em;
+    margin-bottom: 15px;
+    color: #555;
+}
+
+.contact-info i {
+    color: var(--secondary-color);
+    margin-right: 10px;
+}
+
+.social-links {
+    margin-top: 30px;
+}
+
+.social-links a {
+    color: var(--primary-color);
+    font-size: 2em;
+    margin: 0 15px;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: var(--secondary-color);
+}
+
+.map-container {
+    position: relative;
+    overflow: hidden;
+    padding-top: 56.25%; /* Proporção 16:9 */
+    height: 0;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    margin-top: 50px;
+}
+
+.map-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+/* --- RODAPÉ --- */
+.footer {
+    background-color: var(--background-dark);
+    color: var(--light-text-color);
+    text-align: center;
+    padding: 40px 25px;
+    font-size: 0.9em;
+}
+
+.footer .social-links {
+    margin-bottom: 20px;
+}
+
+.footer .social-links a {
+    color: var(--light-text-color);
+}
+
+.footer .social-links a:hover {
+    color: var(--secondary-color);
+}
+
+.dev-signature {
+    margin-top: 15px;
+    color: #888;
+}
+
+/* --- ESTILOS PARA PÁGINA DE RESERVA --- */
+.page-header {
+    position: relative;
+    padding: 150px 20px 80px;
+    text-align: center;
+    color: var(--light-text-color);
+    background: url("img/reserva-header.jpg") no-repeat center center/cover;
+}
+
+.page-header-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+}
+
+.page-header h1,
+.page-header p {
+    position: relative;
+    z-index: 2;
+}
+
+.page-header h1 {
+    font-size: 4em;
+    margin-bottom: 15px;
+    color: var(--light-text-color);
+}
+
+.page-header p {
+    font-size: 1.3em;
+    font-weight: 300;
+}
+
+.booking-section {
+    padding: 80px 20px;
+    background-color: var(--background-light);
+}
+
+.booking-form {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 50px;
+    border-radius: 10px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+    text-align: left;
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: 700;
+    color: var(--primary-color);
+    font-size: 1.1em;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-family: "Roboto", sans-serif;
+    font-size: 1em;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: var(--secondary-color);
+    box-shadow: 0 0 0 3px rgba(199, 154, 94, 0.2);
+}
+
+.form-row {
+    display: flex;
+    gap: 20px;
+}
+
+.form-row .form-group {
+    flex: 1;
+}
+
+.submit-button {
+    width: 100%;
+    border: none;
+    cursor: pointer;
+    margin-top: 30px;
+}
+
+/* --- RESPONSIVIDADE --- */
+@media (max-width: 992px) {
+    .nav-menu {
+        display: none; /* Esconde o menu em telas menores, para um futuro menu hamburguer */
+    }
+    .nav-container {
+        justify-content: space-between; /* Ajusta para telas menores */
+    }
+    .hero-content h1 {
+        font-size: 3.5em;
+    }
+    .hero-content p {
+        font-size: 1.2em;
+    }
+    .section-header h2 {
+        font-size: 2.8em;
+    }
+    .about-grid, .accommodation-options, .lazer-grid, .gallery-grid-inline {
+        grid-template-columns: 1fr;
+    }
+    .form-row {
+        flex-direction: column;
+    }
+    .booking-form {
+        padding: 30px;
+    }
+}
+
+@media (max-width: 576px) {
+    .nav-container {
+        height: 70px;
+    }
+    .nav-logo {
+        font-size: 1.5em;
+    }
+    .nav-button {
+        padding: 8px 15px;
+        font-size: 0.9em;
+    }
+    .hero-content h1 {
+        font-size: 2.5em;
+    }
+    .hero-content p {
+        font-size: 1em;
+    }
+    .section-header h2 {
+        font-size: 2em;
+    }
+    .section-header p {
+        font-size: 1em;
+    }
+    .whatsapp-float {
+        width: 50px;
+        height: 50px;
+        font-size: 1.8em;
+        bottom: 15px;
+        right: 15px;
+    }
+    .page-header h1 {
+        font-size: 2.5em;
+    }
+    .page-header p {
+        font-size: 1em;
+    }
+}
