@@ -75,7 +75,7 @@ h1, h2, h3, h4 { font-family: "Playfair Display", serif; font-weight: 700; color
 .hero-section {
     position: relative; height: 100vh;
     /* 2. FOTO PRINCIPAL ADICIONADA AQUI */
-    background: url("https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=2070&auto=format&fit=crop") no-repeat center center/cover;
+    background: url("./piscina.webp") no-repeat center center/cover;
     display: flex; align-items: center; justify-content: center;
     text-align: center; color: var(--light-text-color);
     padding-top: 80px; /* Espaço para o navbar */
